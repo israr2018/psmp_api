@@ -1,0 +1,7 @@
+#Ignore folder name node_modules
+node_modules
+#Ignore folder name uploads
+
+#Ignore file 
+
+psmp_api.http
