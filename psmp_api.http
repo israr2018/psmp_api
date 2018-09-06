@@ -1,0 +1,64 @@
+http://localhost:8000/api/schools
+
+###
+POST http://localhost:8000/api/schools HTTP/1.1
+content-type: application/json
+
+ { 
+    "user_name":"abc",
+    "school_name":"test",
+    "user_name":"israr",
+    "user_email":"gmail",
+    "user_mobile":"mobile",
+    "user_password":"password123456"
+ }
+
+###
+
+POST http://localhost:8000/api/schools/login  
+content-type: application/json
+
+{
+    "user_name" :"israr22",
+    "user_password" : "password1234"
+}
+###
+
+POST http://localhost:8000/api/classes  
+content-type: application/json
+
+{
+    "class_level" :"KG",
+    "Fees" : "500",
+    "courses":[
+        "English","Urdu","Mathes"
+    ],
+    "school_id":"5b7d30a966cec178ff5a0c20"
+}
+
+###
+GET http://localhost:8000/api/classes/5b7d30a966cec178ff5a0c20
+
+
+
+###
+
+POST http://localhost:8000/api/students
+content-type: application/json
+
+ { 
+    "school_id" : "5b7d30a966cec178ff5a0c20",
+    "class_id" :  "5b827e4f1102bc0b64067ba6",
+    "student_name" : "Talha",
+    "father_name" : "Awais",
+    "gardian_name" :"Awais",
+    "student_mobile" :"7485966",
+    "gardian_mobile" :"74859666",
+     "father_mobile" :"74859666",
+     "dob":"2010/8/2",
+     "post_address":"Viallage and Post Office Sarai Bala"
+}
+
+###
+
+Get http://localhost:8000/api/schools/5b8eab780c8fcf1a74c388b1
