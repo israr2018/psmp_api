@@ -3,7 +3,9 @@ var app=express();
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 //var db=mongoose.connect('mongodb://localhost:27017/bookApi');
-var db=mongoose.connect('mongodb://localhost:27017/SMS');
+//var db=mongoose.connect('mongodb://localhost:27017/SMS');
+var db=mongoose.connect('mongodb://israr:Computer2018@ds249372.mlab.com:49372/sms_db');
+
 //var db=mongoose.connect('mongodb://localhost:27017/MCZ_A2');
 /* mongoose.connect('mongodb://localhost:27017/SMS',function(err,db){
 if(err){
@@ -26,7 +28,7 @@ var school_model=require('./models/school_model');
 var class_model=require('./models/class_model');
 var student_reg_model=require('./models/student_reg_model');
 var student_attendence_model=require('./models/student_attendence_model');
-var port=process.env.PORT||3000;
+var port=process.env.PORT||8000;
 app.use('/uploads',express.static('uploads'));
 // Add headers
 app.use(function (req, res, next) {
