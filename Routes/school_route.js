@@ -72,7 +72,7 @@ var routes = function (School) {
                 });
 
             } else {
-                console.log("no error occured");
+                
                 return res.status(200).json(schools);
             }
 
