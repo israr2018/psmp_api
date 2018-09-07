@@ -2,7 +2,7 @@ var gulp=require('gulp');
  var nodemon=require('gulp-nodemon');
 gulp.task('default',function () {
  nodemon({
-  script:'app.js' ,
+  script:'web.js' ,
   ext:'js',
   env:{
       PORT:8000
@@ -15,6 +15,4 @@ gulp.task('default',function () {
 
  });
 
-
 });
-
