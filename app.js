@@ -42,10 +42,10 @@ app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     //https://psmpapp.herokuapp.com
-    res.setHeader('Access-Control-Allow-Origin',config.ACAO);
+  //  res.setHeader('Access-Control-Allow-Origin',config.ACAO);
   // res.setHeader('Access-Control-Allow-Origin','http://locallhost:4200');
    
-   //res.setHeader('Access-Control-Allow-Origin', 'https://psmpapp.herokuapp.com');
+   res.setHeader('Access-Control-Allow-Origin', 'https://psmsapp.herokuapp.com');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
