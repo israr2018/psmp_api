@@ -68,7 +68,7 @@ app.use("/api/students",student_router);
 app.use("/api/attendence",attendence_router);
 app.use("/api/test",fees_ledger_router);
 app.get('/',function(req,res) {
-    res.send("Welcome PSMS  api services ");
+    res.send("Welcome PSMS  api services... ");
 });
 app.listen(config.port,function () {
     console.log("server is running on port: "+ config.port)
