@@ -1,15 +1,20 @@
 const config = require('./config/index');
 var express=require('express');
 var app=express();
+var cors=require('cors');
+app.use(cors({credentials: true, origin: true}));
 //const config = require('./config');
 require('dotenv').config();
-var cors=require('cors');
-app.use(cors());
+
 const logger = require('morgan');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 //var db=mongoose.connect('mongodb://localhost:27017/bookApi');
-var db=mongoose.connect(config.database.connection);
+var db=mongoose.connect(config.database.connection).then(()=>{
+console.log("connect to the data base successfully.")
+},(error)=>{
+console.log(`Could not connect to database something goes wrong:${error}`);
+});
 
 //var db=mongoose.connect('mongodb://israr:Computer2018@ds249372.mlab.com:49372/sms_db');
 
@@ -37,29 +42,6 @@ var student_reg_model=require('./models/student_reg_model');
 var student_attendence_model=require('./models/student_attendence_model');
 var fees_ledger_model=require('./models/fees_ledger');
 
-// Add headers
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    //https://psmpapp.herokuapp.com
-    //  res.setHeader('Access-Control-Allow-Origin',config.ACAO);
-   // res.setHeader('Access-Control-Allow-Origin','http://locallhost:4200');
-   
-    res.setHeader('Access-Control-Allow-Origin', '*');
- //  https://psmpapi.herokuapp.com
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-   // res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
 app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
