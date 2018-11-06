@@ -30,7 +30,7 @@ const SchoolsSchema = new Schema({
     },
     is_activated: {
         type: Boolean,
-        default:false
+        default:true
     }
 }
 

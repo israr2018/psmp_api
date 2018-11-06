@@ -84,18 +84,49 @@ var routes = function (School) {
             "user_name": req.body.user_name,
             "user_password": req.body.user_password
         };
+      
         School.findOne(query, function (err, school) {
-            if (!err) {
-                if (school) {
-                    return res.status(200).send(school);
-                } else {
-                    return res.status(404).json(school);
-                    // return res.status(404).send({message:"Invalid user name or password"});
-                }
+           if(!err){
+            if(!school)
+            {
+              
+                console.log("user name/password pair does not match"); 
+                return res.status(200).json({
+                   status_code:404,
+                    message:"Invalid username/password pair",
+                    data:null
+                });
             }
-            return res.send(500).send({
-                "message": err
-            });
+            else{
+                console.log("you are login in successfully");
+                const payLoad = {
+
+                    "_id": school._id,
+                    "school_name":school.school_name,
+                    "user_role": school.uers_role
+                   
+                };
+                const payLoad2={
+                    "user_role":school.user_role,
+                    "is_activated":school.is_activated,
+                    "_id":school._id
+                }
+                const token = jwt.sign(payLoad, "test", { expiresIn: '1h' });
+                console.log("token generated:"+token);
+                return res.status(200).json({
+                    status_code:200,
+                    message:"You are loggin successfully",
+                    data:payLoad2,
+                    token:token
+                    
+                });
+            }
+           }
+           return res.send(200).json({
+            status_code:500,
+            message:"Internal server error",
+            data:null
+           });
         });
     });
     school_router.get("/:school_id", function (req, res) {

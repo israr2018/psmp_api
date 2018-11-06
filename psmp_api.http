@@ -1,4 +1,4 @@
-http://localhost:8000/api/schools
+https://psmpapi.herokuapp.com/api/schools
 
 ###
 POST http://localhost:8000/api/schools HTTP/1.1
@@ -19,7 +19,7 @@ POST http://localhost:8000/api/schools/login
 content-type: application/json
 
 {
-    "user_name" :"israr22",
+    "user_name" :"israr",
     "user_password" : "password1234"
 }
 ###
@@ -61,4 +61,7 @@ content-type: application/json
 
 ###
 
-Get http://localhost:8000/api/schools/5b8eab780c8fcf1a74c388b1
+POST http://localhost:8000/api/classes/5b8e5b37bd848c203fd94fbb/II
+
+###
+GET http://localhost:8000/api/test/test

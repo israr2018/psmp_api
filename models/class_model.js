@@ -10,10 +10,15 @@ const ClassSchema = new Schema({
     },
     courses: [],
     school_id:
-        {type: Schema.Types.ObjectId, ref: 'schools'}
+        {type: Schema.Types.ObjectId, ref: 'schools'},
         
-    }
-
-);
+    today_date:
+    
+        {
+            type:String
+            
+        }
+    
+});
 
 module.exports = mongoose.model('Class', ClassSchema,'classes');
