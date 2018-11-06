@@ -1,8 +1,8 @@
 const config = require('./config/index');
 var express=require('express');
 var app=express();
-var cors=require('cors');
-app.use(cors({credentials: true, origin: true}));
+//var cors=require('cors');
+//app.use(cors({credentials: true, origin: true}));
 //const config = require('./config');
 require('dotenv').config();
 
@@ -10,11 +10,11 @@ const logger = require('morgan');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 //var db=mongoose.connect('mongodb://localhost:27017/bookApi');
-var db=mongoose.connect(config.database.connection).then(()=>{
-console.log("connect to the data base successfully.")
-},(error)=>{
-console.log(`Could not connect to database something goes wrong:${error}`);
-});
+// var db=mongoose.connect(config.database.connection).then(()=>{
+// console.log("connect to the data base successfully.")
+// },(error)=>{
+// console.log(`Could not connect to database something goes wrong:${error}`);
+// });
 
 //var db=mongoose.connect('mongodb://israr:Computer2018@ds249372.mlab.com:49372/sms_db');
 
