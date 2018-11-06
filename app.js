@@ -4,7 +4,7 @@ var app=express();
 //const config = require('./config');
 require('dotenv').config();
 var cors=require('cors');
-app.use(cors);
+app.use(cors());
 const logger = require('morgan');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
@@ -42,11 +42,11 @@ app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     //https://psmpapp.herokuapp.com
-  //  res.setHeader('Access-Control-Allow-Origin',config.ACAO);
-  // res.setHeader('Access-Control-Allow-Origin','http://locallhost:4200');
+    //  res.setHeader('Access-Control-Allow-Origin',config.ACAO);
+   // res.setHeader('Access-Control-Allow-Origin','http://locallhost:4200');
    
-   res.setHeader('Access-Control-Allow-Origin', '*');
-
+    res.setHeader('Access-Control-Allow-Origin', '*');
+ //  https://psmpapi.herokuapp.com
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
