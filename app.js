@@ -36,7 +36,7 @@ var class_model=require('./models/class_model');
 var student_reg_model=require('./models/student_reg_model');
 var student_attendence_model=require('./models/student_attendence_model');
 var fees_ledger_model=require('./models/fees_ledger');
-app.use('/uploads',express.static('uploads'));
+
 // Add headers
 app.use(function (req, res, next) {
 
@@ -45,21 +45,22 @@ app.use(function (req, res, next) {
   //  res.setHeader('Access-Control-Allow-Origin',config.ACAO);
   // res.setHeader('Access-Control-Allow-Origin','http://locallhost:4200');
    
-   res.setHeader('Access-Control-Allow-Origin', 'https://psmsapp.herokuapp.com');
+   res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
     // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type');
 
     // Set to true if you need the website to include cookies in the requests sent
     // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
+   // res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
     next();
 });
+app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 /* var bookRouter=require('./Routes/bookRoutes')(Book);
