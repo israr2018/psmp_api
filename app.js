@@ -3,7 +3,7 @@ var express=require('express');
 var app=express();
 var cors=require('cors');
 app.use(cors({credentials: true, origin: true}));
-const config = require('./config');
+//const config = require('./config');
 require('dotenv').config();
 
 const logger = require('morgan');
@@ -45,12 +45,8 @@ var fees_ledger_model=require('./models/fees_ledger');
 app.use('/uploads',express.static('uploads'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-// var bookRouter=require('./Routes/bookRoutes')(Book);
-var carAdsRouter=require('./Routes/CarAdsRoutes')(CarAds);
-var carMakesRouter=require('./Routes/CarMakesRoutes')(CarMakes);
-var carModelsRouter=require('./Routes/CarModelsRoutes')(CarModels);
 
-var authRouter=require('./Routes/authRoute')(UserModel); 
+//var authRouter=require('./Routes/authRoute')(UserModel); 
 var school_router=require('./Routes/school_route')(school_model);
 var class_router=require('./Routes/class_route')(class_model);
 var student_router=require('./Routes/student_route')(student_reg_model);
