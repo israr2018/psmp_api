@@ -4,7 +4,7 @@ var app=express();
 var cors=require('cors');
 app.use(cors({credentials: true, origin: true}));
 //const config = require('./config');
-require('dotenv').config();
+//require('dotenv').config();
 
 const logger = require('morgan');
 var bodyParser=require('body-parser');
@@ -63,11 +63,11 @@ app.use("/api/classes",class_router);
 app.use("/api/students",student_router);
 app.use("/api/attendence",attendence_router);
 //app.use("/api/test",fees_ledger_router);
-var port=process.env.PORT;
+//var port=process.env.PORT;
 app.get('/',function(req,res) {
     res.send("Welcome PSMS  api services... ");
 });
-app.listen(port,function () {
-   console.log("server is running on port: "+ port);
+app.listen(config,function () {
+   console.log("server is running on port: "+ config.port);
    
 });
