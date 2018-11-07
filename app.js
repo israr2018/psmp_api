@@ -36,7 +36,7 @@ var app=express();
 // app.use("/api/attendence",attendence_router);
 var port=process.env.PORT;
 app.get('/',function(req,res) {
-    res.send("Welcome PSMS  api services... ");
+    res.send("Welcome PSMS  api services "+JSON.stringify(config));
 });
 app.listen(port,function () {
    console.log("server is running on port: "+ port);
