@@ -6,6 +6,7 @@ var node_env=(process.env.NODE_ENV||'development').trim();
 //var dev=(process.env.NODE_ENV||'development');
 
 var config = require('./env/'+node_env);
+config.port=process.env.port;
 // merge the default , the current one ie production  ,development and export it for use
 //module.exports = _.merge({}, defaults, config);
 
