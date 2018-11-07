@@ -38,7 +38,7 @@ var port=process.env.PORT
 app.get('/',function(req,res) {
     res.send("Welcome PSMS  api services... ");
 });
-app.listen(port,function () {
-   console.log("server is running on port: "+ port);
+app.listen(config.port,function () {
+   console.log("server is running on port: "+ config.port);
    
 });
