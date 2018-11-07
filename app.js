@@ -69,5 +69,6 @@ app.get('/',function(req,res) {
 });
 app.listen(config,function () {
    console.log("server is running on port: "+ config.port);
+   console.log("config object:"+JSON.stringify(config));
    
 });
