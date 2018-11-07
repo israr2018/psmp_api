@@ -7,7 +7,7 @@ var port=process.env.PORT
 app.get('/',function(req,res){
  res.send("Hello Israr");
 });
-app.listen(port,function(){
+app.listen(config,function(){
    // console.log("Gulp 2 is Running on PORT"+port);
     console.log("config.."+config.port);
 });
