@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "globals": "npm i -g cross-env",
-    "start": " set NODE_ENV=development & gulp",
+    "start": " set NODE_ENV=development & node app.js",
     "qa2": "cross-env NODE_ENV=qa2 & node app.js",
-    "prod": "set NODE_ENV=production & gulp"
+    "prod": "set NODE_ENV=production & node app.js"
   },
   "author": "",
   "license": "ISC",
