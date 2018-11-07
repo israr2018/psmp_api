@@ -51,7 +51,7 @@ var school_router=require('./Routes/school_route')(school_model);
 var class_router=require('./Routes/class_route')(class_model);
 var student_router=require('./Routes/student_route')(student_reg_model);
 var attendence_router=require('./Routes/attendence_route')(student_attendence_model);
-var fees_ledger_router=require('./Routes/test_route')(fees_ledger_model);
+//var fees_ledger_router=require('./Routes/test_route')(fees_ledger_model);
 //  app.use("/api/Books",bookRouter);
 // app.use("/api/CarAds",carAdsRouter);
 // app.use("/api/CarMakes",carMakesRouter);
@@ -62,12 +62,12 @@ app.use("/api/schools",school_router);
 app.use("/api/classes",class_router);
 app.use("/api/students",student_router);
 app.use("/api/attendence",attendence_router);
-app.use("/api/test",fees_ledger_router);
-//var port=process.env.PORT;
+//app.use("/api/test",fees_ledger_router);
+var port=process.env.PORT;
 app.get('/',function(req,res) {
     res.send("Welcome PSMS  api services... ");
 });
-app.listen(config,function () {
-   console.log("server is running on port: "+ config.port);
+app.listen(port,function () {
+   console.log("server is running on port: "+ port);
    
 });
