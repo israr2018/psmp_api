@@ -34,7 +34,7 @@ app.use("/api/students",student_router);
 app.use("/api/attendence",attendence_router);
 var port=process.env.PORT;
 app.get('/',function(req,res) {
-    res.send("Welcome PSMS  api services "+JSON.stringify(config));
+    res.send("Welcome PSMS  api services ");
 });
 app.listen(port,function () {
    console.log("server is running on port: "+ port);
