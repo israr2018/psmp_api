@@ -38,7 +38,7 @@ app.use("/api/attendence",attendence_router);
 app.get('/',function(req,res) {
     res.send("Welcome PSMS  api services... ");
 });
-app.listen(config,function () {
+app.listen(config.port,function () {
    console.log("server is running on port: "+ config.port);
    
 });
