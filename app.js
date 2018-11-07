@@ -9,7 +9,7 @@ require('dotenv').config();
 const logger = require('morgan');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
-var db=mongoose.connect('mongodb://localhost:27017/bookApi');
+//var db=mongoose.connect('mongodb://localhost:27017/bookApi');
 var db=mongoose.connect(config.database.connection).then(()=>{
 console.log("connect to the data base successfully.")
 },(error)=>{
